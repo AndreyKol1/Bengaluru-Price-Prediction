@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengaluru Price Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <main>
+        <div class='form-container'>
+            <form method="POST" action="/predict">
+                <label for="area-type">Area Type:</label>
+                <select name="area-type" id="area-type" required>
+                    <option value="Super Built-up Area">Super Built-up Area</option>
+                    <option value="Built-up Area">Built-up Area</option>
+                    <option value="Plot Area">Plot Area</option>
+                    <option value="Carpet Area">Carpet Area</option>
+                </select><br>
+
+                <label for="availability">Availability:</label>
+                <input name="availability" placeholder="Ready To Move or your date" required><br>
+
+                <label for="city-select">Area in Bengaluru:</label>
+                <select name="location" id="city-select" required>
+                    <option value="">Select a city</option>
+                </select><br>
+
+                <label for="size">Number of Bedrooms:</label>
+                <input type="number" name="size" min="1" placeholder='1, 2 or more' required><br>
+
+                <label for="total_sqft">Total Square Feet:</label>
+                <input type="number" name="total_sqft" min='1' required><br>
+
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="number" name="bathrooms" min='1' required><br>
+
+                <label for="balconies">Number of Balconies:</label>
+                <input type="number" name="balconies" min='1'><br>
+
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+        <div id="prediction-box" class="prediction-box">
+            <h2>Prediction Result:</h2>
+            {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+            {% endif %}
+        </div>
+    </main>
+
+
+    <script src="static/script.js"></script>
+</body>
+</html>
