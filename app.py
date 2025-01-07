@@ -35,4 +35,4 @@ def predict():
     return render_template("index.html", prediction_text=f"The estimated price based on chosen data is {round(prediction[0] * 100000 * 0.0115, 1)} usdt")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
