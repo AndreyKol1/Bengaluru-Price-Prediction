@@ -1,4 +1,4 @@
-blinker==1.5
+blinker==1.6.2
 catboost==1.2.7
 click==8.1.7
 colorama==0.4.6
